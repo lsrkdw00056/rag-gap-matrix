@@ -1,0 +1,7 @@
+pymupdf
+sentence-transformers
+faiss-cpu
+pandas
+openpyxl
+python-dotenv
+google-genai

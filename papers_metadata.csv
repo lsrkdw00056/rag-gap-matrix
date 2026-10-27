@@ -1,0 +1,11 @@
+paper_id,judul,penulis,tahun,doi,file
+P01,"Beauty clinic patient diagnosis prediction based on Retrieval-Augmented Generation and Large Language Models",Aditya Nanda Utama et al.,2026,10.1016/j.procs.2026.07.159,P01_Utama_2026.pdf
+P02,"Exploring a learning-to-rank approach to enhance the Retrieval Augmented Generation (RAG)-based electronic medical records search engines",Cheng Ye et al.,2024,10.1016/j.infoh.2024.07.001,P02_Ye_2024.pdf
+P03,"From General Doctor to Specialist: Enhancing Radiology Report Generation with Retrieval-Augmented Generation",Ghazal Zamaninejad et al.,2026,10.1016/j.procs.2026.01.095,P03_Zamaninejad_2026.pdf
+P04,"Optimising clinical information extraction: a comparative study of retrieval-augmented generation techniques in clinical notes",Hengyi Zhang et al.,2026,10.1016/j.jbi.2026.105053,P04_Zhang_2026.pdf
+P05,"Domain-Specific Retrieval-Augmented Generation for English-to-Hindi Machine Translation Using BLOOMZ-3B",Kuruva Divya Sree et al.,2026,10.1016/j.procs.2026.06.108,P05_Sree_2026.pdf
+P06,"Towards Context-Aware Clinical Decision Support with Retrieval-Augmented Generation",Lenno Aubert Hartono et al.,2025,10.1016/j.procs.2025.09.116,P06_Hartono_2025.pdf
+P07,"Transforming Healthcare Compliance with Retrieval Augmented Generation (RAG) Model: Addressing Challenges for Sustainable Development",Mohammed Haaris Shaikh et al.,2026,10.1016/j.procs.2026.06.145,P07_Shaikh_2026.pdf
+P08,"Integration of Retrieval Augmented Generation (RAG) with Small Language Models (SLMs) for Development of Optimized Agentic AI Chatbot",Pradeep Singh et al.,2026,10.1016/j.procs.2026.06.296,P08_Singh_2026.pdf
+P09,"A survey on medical multimodal retrieval-augmented generation (RAG)",Ruipeng Wang et al.,2026,10.1016/j.hcc.2026.100415,P09_RWang_2026.pdf
+P10,"A retrieval augmented generation based optimization approach for medical knowledge understanding and reasoning in large language models",Yingshuai Wang et al.,2025,10.1016/j.array.2025.100504,P10_YWang_2025.pdf

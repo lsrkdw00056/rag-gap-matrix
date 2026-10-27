@@ -1,0 +1,169 @@
+{
+    "_petunjuk": "jenis: 'salah' = LLM keliru (dihitung sebagai kesalahan di akurasi); 'standardisasi' = isi benar tetapi dilabeli ulang (Not reported / Partial / N/A). verified_ok = kolom yang sudah kalian cek ke PDF dan ternyata benar. Isi verified_ok hanya untuk paper di validated_papers, dan cek SEMUA 12 kolom agar akurasi valid.",
+    "validated_papers": [
+        "P01",
+        "P06",
+        "P10"
+    ],
+    "verified_ok": {
+        "P01": [],
+        "P06": [],
+        "P10": []
+    },
+    "catatan_paper": {
+        "P05": "Terjemahan mesin Inggris-Hindi lintas lima domain (kesehatan salah satunya). Bukan sistem klinis; dipakai sebagai pembanding RAG lintas domain.",
+        "P07": "Kerangka konseptual tanpa implementasi atau evaluasi empiris; angka kinerja bersifat hipotetis.",
+        "P08": "Chatbot klaim asuransi dan layanan pelanggan. Kesehatan hanya disebut sebagai domain lanjutan. Bukan sistem klinis.",
+        "P09": "Paper survei (tidak mengimplementasikan sistem sendiri)."
+    },
+    "corrections": {
+        "P01": {
+            "evaluasi_faithfulness": {
+                "jenis": "standardisasi",
+                "value": "Not reported (only discusses hallucination mitigation and future monitoring; no measurement of hallucination or faithfulness).",
+                "evidence_pages": [
+                    6,
+                    8
+                ],
+                "alasan": "Definisi operasional: hanya klaim mitigasi tanpa pengukuran dihitung Not reported."
+            }
+        },
+        "P02": {
+            "generator_llm": {
+                "jenis": "salah",
+                "value": "GPT-3.5 and Llama 2 70B (pilot study on cancer progression extraction). GPT-4 is only mentioned as an example of state-of-the-art LLMs.",
+                "evidence_pages": [
+                    6
+                ],
+                "alasan": "Paper menyatakan hanya menguji GPT-3.5 dan Llama 2 70B; GPT-4 hanya contoh."
+            }
+        },
+        "P03": {
+            "strategi_chunking": {
+                "jenis": "standardisasi",
+                "value": "N/A - retrieves whole MIMIC-CXR training reports through image-label vector similarity; no text chunking is used.",
+                "evidence_pages": [
+                    3
+                ],
+                "alasan": "Retrieval berbasis vektor label citra, bukan pemotongan teks."
+            },
+            "evaluasi_faithfulness": {
+                "jenis": "standardisasi",
+                "value": "Partial - clinical correctness (CheXbert, RadGraph) and linguistic metrics against reference reports, plus comparison with a no-retrieval baseline; no measure of grounding in retrieved reports and no hallucination rate.",
+                "evidence_pages": [
+                    7
+                ],
+                "alasan": "Metrik berbasis laporan referensi, bukan kesesuaian dengan bukti yang diambil."
+            },
+            "keterbatasan": {
+                "jenis": "salah",
+                "value": "Not reported (the paper has no limitations statement; the Conclusion only summarizes findings).",
+                "evidence_pages": [],
+                "alasan": "LLM memasukkan temuan eksperimen sebagai keterbatasan."
+            }
+        },
+        "P05": {
+            "evaluasi_faithfulness": {
+                "jenis": "standardisasi",
+                "value": "Partial - BERT Similarity against reference translations and a qualitative comparison of hallucinated outputs (Table 6); no quantitative hallucination rate.",
+                "evidence_pages": [
+                    7,
+                    10
+                ],
+                "alasan": "Hanya metrik kemiripan referensi dan contoh kualitatif."
+            },
+            "hasil_utama": {
+                "jenis": "salah",
+                "value": "RAG with BLOOMZ-3B outperforms BLOOMZ-3B zero-shot in semantic similarity and hallucination, but zero-shot Airavata scores higher than the proposed RAG on CHRF++ and METEOR in all five domains (Table 4).",
+                "evidence_pages": [
+                    7,
+                    8
+                ],
+                "alasan": "LLM menyamaratakan klaim paper; Tabel 4 tidak mendukung keunggulan RAG terhadap semua baseline."
+            }
+        },
+        "P06": {
+            "evaluasi_faithfulness": {
+                "jenis": "standardisasi",
+                "value": "Partial - only reference-similarity metrics (METEOR, cosine similarity) against guideline-based reference texts; no measure of grounding in the retrieved context.",
+                "evidence_pages": [
+                    7,
+                    8
+                ],
+                "alasan": "Tidak ada pengukuran kesesuaian jawaban dengan konteks hasil retrieval."
+            }
+        },
+        "P07": {
+            "retriever_embedding": {
+                "jenis": "salah",
+                "value": "Proposed only (not implemented): OpenAI text-embedding-ada-002 or Sentence-BERT all-MiniLM-L6-v2 with a FAISS Flat/IVFFlat index.",
+                "evidence_pages": [
+                    7
+                ],
+                "alasan": "Bagian 3.6 hanya usulan implementasi."
+            },
+            "generator_llm": {
+                "jenis": "salah",
+                "value": "Proposed only (not implemented): any LLM via API, with GPT-4 or Llama 2 given as examples.",
+                "evidence_pages": [
+                    7
+                ],
+                "alasan": "Paper konseptual, tidak ada LLM yang benar-benar dijalankan."
+            },
+            "metrik_evaluasi": {
+                "jenis": "salah",
+                "value": "No empirical evaluation. Only a hypothetical illustration: simulated cosine similarity (e.g. 0.79) and assumed time savings (5 minutes versus 30-45 minutes manual).",
+                "evidence_pages": [
+                    7
+                ],
+                "alasan": "Paper menyatakan metrik dan keluaran bersifat hipotetis."
+            },
+            "evaluasi_faithfulness": {
+                "jenis": "standardisasi",
+                "value": "Not reported (conceptual paper: only proposes mitigations such as factual scoring, iterative RAG and citation alignment).",
+                "evidence_pages": [
+                    8
+                ],
+                "alasan": "Hanya usulan mitigasi, tanpa pengukuran."
+            },
+            "hasil_utama": {
+                "jenis": "salah",
+                "value": "Hypothetical, not measured: simulations suggest about 85% mapping accuracy and 70-80% less manual effort; the paper states there was no actual implementation or empirical evaluation.",
+                "evidence_pages": [
+                    1,
+                    7
+                ],
+                "alasan": "LLM menyajikan angka simulasi sebagai hasil."
+            }
+        },
+        "P08": {
+            "subdomain_kesehatan": {
+                "jenis": "standardisasi",
+                "value": "N/A (not healthcare-specific): evaluated on insurance claim and customer-support documents; healthcare is mentioned only as a possible future domain.",
+                "evidence_pages": [
+                    1
+                ],
+                "alasan": "Domain eksperimen asuransi, bukan klinis."
+            }
+        },
+        "P09": {
+            "strategi_chunking": {
+                "jenis": "standardisasi",
+                "value": "N/A - survey paper; reviews retrieval strategies but does not implement a chunking pipeline.",
+                "evidence_pages": [
+                    4
+                ],
+                "alasan": "Paper survei."
+            },
+            "evaluasi_faithfulness": {
+                "jenis": "standardisasi",
+                "value": "N/A - survey paper; reviews factual-consistency metrics (F1-CheXbert, F1-RadGraph, RAG-Check) rather than evaluating its own system.",
+                "evidence_pages": [
+                    12,
+                    24
+                ],
+                "alasan": "Paper survei."
+            }
+        }
+    }
+}
